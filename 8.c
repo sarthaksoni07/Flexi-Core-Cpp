@@ -45,6 +45,16 @@
         displayArray(result, 3, 3);
     }
      
+    void transpose(int arr[3][3]){
+        int result[3][3]= {0};
+
+        for(int i = 0 ; i<3;i++){
+            for(int j = 0 ; j <3 ; j++){
+                result[i][j]= arr[j][i];
+            }
+        }
+        displayArray(result,3,3);
+    }
     int main() {
         int arr1[3][3];
         int arr2[3][3];
@@ -54,12 +64,16 @@
      
         printf("First matrix:\n");
         displayArray(arr1, 3, 3);
-     
+        
+        printf("transpose of first array");
+        transpose(arr1);
+        
         printf("Second matrix:\n");
         displayArray(arr2, 3, 3);
      
         add_array(arr1, arr2);
         multiply_array(arr1, arr2);
+
      
         return 0;
     }
