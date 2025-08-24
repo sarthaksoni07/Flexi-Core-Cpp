@@ -25,7 +25,7 @@ void bubble_sort(int a[], int n)
         }
     }
     printArray(a, n);
-    printf("\n");
+    cout<<'\n';
 }
 
 void selection_sort(int arr[], int n)
@@ -45,11 +45,22 @@ void selection_sort(int arr[], int n)
         }
     }
     printArray(arr, n);
-    printf("\n");
+    cout<<'\n';
 }
 
 void insertion_sort(int arr[],int n){
-    
+    for (int i = 1; i < n; i++) {
+        int key = arr[i];
+        int j = i - 1;
+        // Move elements of arr[0..i-1], that are greater than key, to one position ahead
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+    printArray(arr, n);
+    cout<<'\n';
 }
 int main()
 {
