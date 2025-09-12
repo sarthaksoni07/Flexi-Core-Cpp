@@ -17,7 +17,15 @@ int main(){
     secondnode = (struct node*)malloc(sizeof(struct node));
     secondnode->data = 5;
     secondnode->next = NULL;
-
+    // Create additional nodes using a loop (example: create 3 more nodes)
+    struct node *current = secondnode;
+    for (int i = 0; i < 3; i++) {
+        struct node *temp = (struct node*)malloc(sizeof(struct node));
+        temp->data = i + 10; // Assign some data
+        temp->next = NULL;
+        current->next = temp;
+        current = temp;
+    }
     // Link first node to second node
     newnode->next = secondnode;
 
