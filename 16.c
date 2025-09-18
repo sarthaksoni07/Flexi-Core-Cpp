@@ -1,18 +1,54 @@
-//struct in c language
-#include<stdio.h>
- 
-struct student
-{
-    int marks;
-    char name[15];
-    float height;
-};
+#include <stdio.h>
+#include <string.h>
 
-int main(){
-struct student s1;
-s1.marks=30;
-s1.height = 178.5;
-return 0;
+int main() {
+    char str1[50] = "Hello";
+    char str2[50] = "World";
+    char dest[50];
+
+    // strcpy   
+    strcpy(dest, str1);
+    printf("strcpy: dest = %s\n", dest);
+
+    // strncpy
+    strncpy(dest, str2, 3);
+    dest[3] = '\0'; // Ensure null-termination
+    printf("strncpy: dest = %s\n", dest);
+
+    // strlen
+    printf("strlen: length of str1 = %zu\n", strlen(str1));
+
+    // strcmp
+    printf("strcmp: str1 vs str2 = %d\n", strcmp(str1, str2));
+
+    // strncmp
+    printf("strncmp: first 3 chars of str1 vs str2 = %d\n", strncmp(str1, str2, 3));
+
+    // strcat
+    strcpy(dest, str1); // Reset dest to "Hello"
+    strcat(dest, str2);
+    printf("strcat: dest = %s\n", dest);
+
+    // strncat
+    strcpy(dest, str1); // Reset dest to "Hello"
+    strncat(dest, str2, 3);
+    printf("strncat: dest = %s\n", dest);
+
+    // strchr
+    char *ch = strchr(str1, 'l');
+    if (ch)
+        printf("strchr: 'l' found at position %ld in str1\n", ch - str1);
+    else
+        printf("strchr: 'l' not found in str1\n");
+
+    // strstr
+    char *sub = strstr(str1, "ll");
+    if (sub)
+        printf("strstr: \"ll\" found at position %ld in str1\n", sub - str1);
+    else
+        printf("strstr: \"ll\" not found in str1\n");
+
+    return 0;
 }
 
 //  String Handling Functions (<string.h>)
