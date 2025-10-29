@@ -1,0 +1,1 @@
+// quickk recap of the concepts for the end terms revision 
