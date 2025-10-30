@@ -9,5 +9,6 @@ int main(){
     bool b;
     double c;
     char d;
+    cin>>a>>c;
     // these are the basic datatypes.
 }
