@@ -1,21 +1,30 @@
-// for dynamic memory allocation 
+// for dynamic memory allocation
 #include <bits/stdc++.h>
 using namespace std;
- 
+
 int main()
 {
-    int a= 5;
-    int* ptr =&a;
-    
-    cout<<"adress of a -  "<<ptr<<endl<<"value of a - "<<*ptr<<endl;
+    int a = 5;
+    int *ptr = &a;
 
-    int *ptrr = new int; //dynamic memory integer
+    cout << "adress of a -  " << ptr << endl
+         << "value of a - " << *ptr << endl;
+
+    int *ptrr = new int; // dynamic memory integer
     *ptrr = 5;
-    cout<<*ptrr<<endl;
+    cout << *ptrr << endl;
     // delete ptrr;
-    int *array = new int[10]{1,2,3,4};
-    cout<<array[0]<<endl;
+    int *array = new int[10]{1, 2, 3, 4};
+    cout << array[0] << endl;
 
     // delete[] array;
+
+
+    
+    int x[] = {1, 2, 3, 4, 5};
+    int *list = x;
+
+    cout << *list << endl
+         << *(list + 1);
     return 0;
 }
