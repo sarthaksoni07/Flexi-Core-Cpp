@@ -19,7 +19,9 @@ class student{
     void info(){
         cout<<"age - "<<this->age<<"grade - "<<this->grade;
     }
-    
+    ~student(){
+        cout<<"deconstructor called";
+    }
 };
 
 int main()
